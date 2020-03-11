@@ -1,11 +1,11 @@
-import React, { useContext, useEffect } from "react";
-import { AppContext } from "../store";
+import React, { useEffect } from "react";
+import { useAppContext } from "hooks/AppContext";
 
 import LogItem from 'components/LogItem'
 
 const LogsPage = () => {
 
-  const { state, dispatch } = useContext(AppContext);
+  const { state, dispatch } = useAppContext();
   
   useEffect(() => {
     async function fetchData() {

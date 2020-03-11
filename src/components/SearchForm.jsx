@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
-import { AppContext } from "../store";
+import React from "react";
+import { useAppContext } from "hooks/AppContext";
 
 const SearchForm = (props) => {
 
-  const { dispatch } = useContext(AppContext);
+  const { dispatch } = useAppContext();
 
   const handleChange = (e) => {
     const term = e.currentTarget.value || ''

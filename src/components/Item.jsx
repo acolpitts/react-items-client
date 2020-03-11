@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
-import { AppContext } from "../store";
+import React from "react";
+import { useAppContext } from "hooks/AppContext";
 
 import styles from './Item.module.scss';
 
 const Item = ({item}) => {
-  const { dispatch } = useContext(AppContext);
+  const { dispatch } = useAppContext();
 
   const handleDelete = () => {
     async function deleteItem() {

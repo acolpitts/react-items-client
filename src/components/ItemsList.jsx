@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
-import { AppContext } from "../store";
+import React from "react";
+import { useAppContext } from "hooks/AppContext";
 
 import styles from "./ItemsList.module.scss";
 import Item from 'components/Item';
 import Sidebar from 'components/Sidebar';
 
 const ItemsList = () => {
-  const { state } = useContext(AppContext);
+  const { state } = useAppContext();
   
   const renderSidebar = () => {
     return (
@@ -19,8 +19,8 @@ const ItemsList = () => {
     const colOne = results.filter(item => item.column === col)
    
     return (
-      <ul>
-        <h4>Column One</h4>
+      <ul id={`column-${col}`}>
+        <h4>Column {col}</h4>
         {colOne.map(item => <Item key={item.id} item={item} />)}
       </ul>
     )

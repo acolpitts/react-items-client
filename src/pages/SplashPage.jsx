@@ -1,12 +1,12 @@
-import React, { useContext, useEffect } from "react";
-import { AppContext } from "../store";
+import React, { useEffect } from "react";
+import { useAppContext } from "hooks/AppContext";
 
 import IntroSection from 'components/IntroSection';
 import ItemsList from 'components/ItemsList';
 
 const SplashPage = () => {
 
-  const { dispatch } = useContext(AppContext);
+  const { dispatch } = useAppContext();
   
   useEffect(() => {
     

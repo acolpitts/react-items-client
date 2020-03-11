@@ -9,7 +9,8 @@ import {
 import ReactDOM from "react-dom";
 
 import "./index.scss";
-import { AppContextProvider } from "./store";
+//import { AppContextProvider } from "./store";
+import { AppContextProvider } from 'hooks/AppContext';
 import LogsPage from "pages/LogsPage";
 import SplashPage from "pages/SplashPage";
 

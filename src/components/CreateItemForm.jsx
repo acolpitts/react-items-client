@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
-import { AppContext } from "../store";
+import React from "react";
+import { useAppContext } from "hooks/AppContext";
 import styles from "./CreateItemForm.module.scss";
 
 const CreateItemForm = () => {
-  const { dispatch } = useContext(AppContext);
+  const { dispatch } = useAppContext();
   const titleRef = React.createRef();
   const colRef = React.createRef();
 
@@ -37,8 +37,8 @@ const CreateItemForm = () => {
     <form className={styles.CreateItemForm} onSubmit={handleSubmit}>
       <input type="text" placeholder="Enter Item" ref={titleRef} />
       <select ref={colRef}>
-        <option value="0">Column One</option>
-        <option value="1">Column Two</option>
+        <option value="0">Column 0</option>
+        <option value="1">Column 1</option>
       </select>
       <button>Add Item</button>
     </form>
