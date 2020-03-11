@@ -6,20 +6,16 @@ $theme-gradient-linear: linear-gradient($color-pigeon-post, $color-river-bed);
   display: flex;
   margin: 15px;
 
-  ul {
+  h4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0;
-    padding: 0;
-    
-    h4 {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0;
-      height: 65px;
-      color: white;
-      background-image: $theme-gradient-linear;
-    }
+    height: 65px;
+    color: white;
+    background-image: $theme-gradient-linear;
   }
+  
 }
 
 .row {

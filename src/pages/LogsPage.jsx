@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { useAppContext } from "hooks/AppContext";
 
-import LogItem from 'components/LogItem'
+import LogsList from "components/LogsList";
 
 const LogsPage = () => {
 
-  const { state, dispatch } = useAppContext();
+  const { dispatch } = useAppContext();
   
   useEffect(() => {
     async function fetchData() {
@@ -24,10 +24,7 @@ const LogsPage = () => {
 
   return (
     <main>
-      <h1>App Logs</h1>
-      <ul>
-        {state.logs.map(log => <LogItem key={log.id} log={log} />)}
-      </ul>
+      <LogsList />
     </main>
   )
 }

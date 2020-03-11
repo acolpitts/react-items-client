@@ -1,0 +1,19 @@
+$color-river-bed: #495468;
+
+.Navbar {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  height: 32px;
+  background: darken($color: $color-river-bed, $amount: 5);
+  
+  a {
+    color: white;
+    padding-right: 10px;
+    text-decoration: none;
+    
+    &:visited {
+      color: lightgray;
+    }
+  }
+}
