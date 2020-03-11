@@ -1,20 +1,21 @@
 import React, { useContext, useEffect } from "react";
 import { AppContext } from "../store";
 
+import LogItem from 'components/LogItem'
+
 const LogsPage = () => {
 
-  const { dispatch } = useContext(AppContext);
+  const { state, dispatch } = useContext(AppContext);
   
   useEffect(() => {
     async function fetchData() {
       try {
         const response = await fetch(`http://localhost:8081/api/v1/logs`);
         const json = await response.json();
-        
         return json.data
-
       } catch (err) {
         console.error(err);
+        return []
       }
     }
     dispatch({ type: "FETCH_LOGS", payload: fetchData() })
@@ -24,6 +25,9 @@ const LogsPage = () => {
   return (
     <main>
       <h1>App Logs</h1>
+      <ul>
+        {state.logs.map(log => <LogItem key={log.id} log={log} />)}
+      </ul>
     </main>
   )
 }
