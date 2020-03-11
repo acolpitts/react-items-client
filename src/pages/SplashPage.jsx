@@ -6,9 +6,10 @@ import ItemsList from 'components/ItemsList';
 
 const SplashPage = () => {
 
-  const { state, dispatch } = useContext(AppContext);
+  const { dispatch } = useContext(AppContext);
   
   useEffect(() => {
+    
     async function fetchData() {
       try {
         const response = await fetch(`http://localhost:8081/api/v1/items`);
@@ -16,9 +17,11 @@ const SplashPage = () => {
         return json.data
       } catch (err) {
         console.error(err);
+        return [];
       }
     }
     dispatch({ type: "FETCH_ITEMS", payload: fetchData() })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

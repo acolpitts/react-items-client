@@ -3,7 +3,7 @@ import { AppContext } from "../store";
 
 const LogsPage = () => {
 
-  const { state, dispatch } = useContext(AppContext);
+  const { dispatch } = useContext(AppContext);
   
   useEffect(() => {
     async function fetchData() {
@@ -18,6 +18,7 @@ const LogsPage = () => {
       }
     }
     dispatch({ type: "FETCH_LOGS", payload: fetchData() })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

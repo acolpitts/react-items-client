@@ -25,8 +25,6 @@ const CreateItemForm = () => {
           body: JSON.stringify(item)
         });
         const content = await rawResponse.json();
-
-        console.log(content);
         return {id: content.data[0], ...item}
       } catch (err) {
         console.error(err);

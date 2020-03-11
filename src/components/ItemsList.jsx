@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { AppContext } from "../store";
 
 import styles from "./ItemsList.module.scss";
@@ -6,21 +6,8 @@ import Item from 'components/Item';
 import Sidebar from 'components/Sidebar';
 
 const ItemsList = () => {
-  const { state, dispatch } = useContext(AppContext);
+  const { state } = useContext(AppContext);
   
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     try {
-  //       const response = await fetch(`http://localhost:8081/api/v1/items`);
-  //       const json = await response.json();
-  //       return json.data
-  //     } catch (err) {
-  //       console.error(err);
-  //     }
-  //   }
-  //   dispatch({ type: "FETCH_ITEMS", payload: fetchData() })
-  // }, []);
-
   const renderSidebar = () => {
     return (
       <Sidebar />
@@ -34,7 +21,7 @@ const ItemsList = () => {
     return (
       <ul>
         <h4>Column One</h4>
-        {colOne.map(item => <Item key={item.id} title={item.title} />)}
+        {colOne.map(item => <Item key={item.id} item={item} />)}
       </ul>
     )
   }

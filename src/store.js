@@ -14,8 +14,11 @@ export const AppContextProvider = props => {
         return { ...state, items: action.payload };
       }
       case "ADD_ITEM": {
-        console.log("ACTION PAYLOAD: ", action.payload)
         return { ...state, items: [...state.items, action.payload] };
+      }
+      case "DELETE_ITEM": {
+        const reducedItems = state.items.filter(item => item.id !== action.payload.id)
+        return { ...state, items: reducedItems }
       }
       case "FETCH_LOGS": {
         return { ...state, logs: action.payload };
