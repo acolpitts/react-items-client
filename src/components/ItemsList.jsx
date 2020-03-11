@@ -15,8 +15,8 @@ const ItemsList = () => {
   }
 
   const renderCol = (col) => {
-    const results = state.items.filter(item => item.title.includes(state.searchTerm))
-    const colOne = results.filter(item => item.column === col)
+    const results = state.items.filter(item => item.title.toLowerCase().includes(state.searchTerm.toLowerCase()));
+    const colOne = results.filter(item => item.column === col);
    
     return (
       <ul id={`column-${col}`}>
