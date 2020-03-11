@@ -1,0 +1,31 @@
+.Sidebar {
+  display: flex;
+  flex-direction: column;
+  min-height: 480px;
+
+  input,
+  select,
+  button {
+    height: 45px;
+    color: white;
+    background: rgba(255, 255, 255, 0.25);
+    border: 2px solid white;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    padding-left: 10px;
+  }
+
+  select,
+  button {
+    text-transform: uppercase;
+  }
+
+  button {
+    background: transparent;
+  }
+
+  label {
+    text-transform: uppercase;
+    color: white;
+  }
+}

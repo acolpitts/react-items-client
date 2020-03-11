@@ -3,10 +3,26 @@ import React, { createContext, useReducer } from 'react';
 export const AppContext = createContext();
 export const AppContextProvider = props => {
   const initialState = {
-    counter: 0
+    counter: 0,
+    items: [],
+    logs: [],
+    searchTerm: ''
   };
   const reducer = (state, action) => {
     switch (action.type) {
+      case "FETCH_ITEMS": {
+        return { ...state, items: action.payload };
+      }
+      case "ADD_ITEM": {
+        console.log("ACTION PAYLOAD: ", action.payload)
+        return { ...state, items: [...state.items, action.payload] };
+      }
+      case "FETCH_LOGS": {
+        return { ...state, logs: action.payload };
+      }
+      case "SEARCH_ITEMS": {
+        return { ...state, searchTerm: action.payload };
+      }
       case "ADD_TO_COUNTER": {
         return { ...state, counter: state.counter + action.payload.value };
       }

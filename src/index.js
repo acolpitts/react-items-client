@@ -1,8 +1,17 @@
 import React, { useContext } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 import ReactDOM from "react-dom";
 
 import "./index.scss";
 import { AppContext, AppContextProvider } from "./store";
+import LogsPage from "pages/LogsPage";
+import SplashPage from "pages/SplashPage";
 
 const Display = () => {
   const { state } = useContext(AppContext);
@@ -39,12 +48,25 @@ const Decrement = () => {
     </button>
   );
 };
+
 const App = () => {
   return (
     <AppContextProvider>
-      <Display />
-      <Increment />
-      <Decrement />
+      <Router>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/logs">Logs</Link>
+      </nav>
+        <Switch>
+          <Route path="/logs">
+            <LogsPage />
+          </Route>
+          <Route path="/">
+            <SplashPage />
+          </Route>
+        </Switch>
+
+      </Router>
     </AppContextProvider>
   );
 };

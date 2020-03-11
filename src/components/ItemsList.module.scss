@@ -1,0 +1,46 @@
+$color-pigeon-post: #b8c8db;
+$color-river-bed: #495468;
+$theme-gradient-linear: linear-gradient($color-pigeon-post, $color-river-bed);
+
+.ItemsList {
+  display: flex;
+  margin: 15px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    
+    h4 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      height: 65px;
+      color: white;
+      background-image: $theme-gradient-linear;
+    }
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  min-width: 240px;
+
+  &:first-child {
+    padding-right: 10px;
+  }
+}
+
+.column-data {
+  border: 2px solid white;
+}

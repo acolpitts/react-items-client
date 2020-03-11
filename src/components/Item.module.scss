@@ -1,0 +1,15 @@
+.Item {
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  height: 65px;
+
+  &:nth-child(even) {
+    background: #f2f3f4;
+  }
+  &:nth-child(odd) {
+    background: #bcc0c7;
+  }
+}
