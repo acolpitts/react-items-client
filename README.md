@@ -1,4 +1,13 @@
+# React Items Client
+This project requires the backend server to be up and running locally on port `8081`. The backend server can be found here: https://github.com/acolpitts/koa-items-api
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Getting Started
+1. make sure you have the backend server up and running. See: https://github.com/acolpitts/koa-items-api
+1. clone this repo 
+1. from the project root, install dependencies: `yarn install`
+1. start the app in development mode `yarn start`
 
 ## Available Scripts
 
